@@ -12,26 +12,27 @@ pipeline {
         timestamps()
     }
     stages {
-/*        stage("docker login") {
+        /*
+        stage("docker login") {
             steps {
                 echo " ============== docker login =================="
-                withCredentials([usernamePassword(credentialsId: 'neznayka666', usernameVariable: 'neznayka666', passwordVariable: 'Kerpitc92')]) {
+                withCredentials([usernamePassword(credentialsId: 'dockerhub_semaev', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                     sh """
                     docker login -u $USERNAME -p $PASSWORD
                     """
                 }
             }
-        */
         }
+        */
         stage("create docker image") {
             steps {
                 echo " ============== start building image =================="
-                dir ('.') {
-                	sh 'docker build -t apache2 . '
+                dir ('docker/toolbox') {
+                	sh 'docker build -t semaev/toolbox:latest . '
                 }
             }
         }
-/*        stage("docker push") {
+        stage("docker push") {
             steps {
                 echo " ============== start pushing image =================="
                 sh '''
@@ -39,6 +40,5 @@ pipeline {
                 '''
             }
         }
-*/
     }
 }
