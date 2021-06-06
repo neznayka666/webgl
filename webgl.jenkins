@@ -40,6 +40,6 @@ pipeline {
                 docker push neznayka666/webgl:1.1
                 '''
             }
-        }*
+        }
     }
 }
