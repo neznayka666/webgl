@@ -12,7 +12,6 @@ pipeline {
         timestamps()
     }
     stages {
-        
         stage("docker login") {
             steps {
                 echo " ============== docker login =================="
@@ -23,16 +22,14 @@ pipeline {
                 }
             }
         }
-        
         stage("create docker image") {
             steps {
                 echo " ============== start building image =================="
-                dir ('.') {
+                dir ('docker/toolbox') {
                 	sh 'docker build -t neznayka666/webgl:1.1 . '
                 }
             }
         }
-
         stage("docker push") {
             steps {
                 echo " ============== start pushing image =================="
