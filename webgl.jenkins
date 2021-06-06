@@ -28,7 +28,7 @@ pipeline {
             steps {
                 echo " ============== start building image =================="
                 dir ('.') {
-                	sh 'docker build -t apache2:1.1 . '
+                	sh 'docker build -t neznayka666/webgl:1.1 . '
                 }
             }
         }
