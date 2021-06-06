@@ -28,18 +28,11 @@ pipeline {
             steps {
                 echo " ============== start building image =================="
                 dir ('.') {
-                	sh 'docker build -t apache2 . '
+                	sh 'docker build -t apache2:1.1 . '
                 }
             }
         }
-                stage("create docker conteiner") {
-            steps {
-                echo " ============== start conteiner =================="
-                dir ('.') {
-                	sh 'docker-compose up'
-                }
-            }
-        }
+
 /*        stage("docker push") {
             steps {
                 echo " ============== start pushing image =================="
