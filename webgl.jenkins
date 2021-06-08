@@ -25,7 +25,7 @@ pipeline {
         stage("create docker image") {
             steps {
                 echo " ============== start building image =================="
-                dir ('docker/toolbox') {
+                dir ('.') {
                 	sh 'docker build -t neznayka666/webgl:1.1 . '
                 }
             }

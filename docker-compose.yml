@@ -3,7 +3,7 @@ version: "3"
 services: 
     web:
         container_name: webgl-client
-        image: apache2
+        image: neznayka666/webgl:1.1
         ports: 
             - "9095:9095"
 #        volumes: 
